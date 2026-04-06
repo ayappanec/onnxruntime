@@ -301,6 +301,7 @@ jobs:
             --use_cache `
             --use_external_dawn `
             --use_webgpu
+          ccache --show-stats -vv
 
       - name: Run tests (onnxruntime_webgpu_external_dawn_test)
         run: onnxruntime_webgpu_external_dawn_test.exe

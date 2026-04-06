@@ -55,3 +55,7 @@ jobs:
             --use_cache `
             --use_vcpkg `
             --use_vcpkg_ms_internal_asset_cache
+          if ($LASTEXITCODE -ne 0) {
+            exit $LASTEXITCODE
+          }
+          ccache --show-stats -vv

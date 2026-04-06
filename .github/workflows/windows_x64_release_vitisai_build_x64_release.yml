@@ -102,6 +102,7 @@ jobs:
             exit $LASTEXITCODE
           }
           Remove-Item "${env:GITHUB_WORKSPACE}\build\RelWithDebInfo" -Include "*.obj" -Recurse
+          ccache --show-stats -vv
         env:
           ALLOW_RELEASED_ONNX_OPSET_ONLY: '0'
 

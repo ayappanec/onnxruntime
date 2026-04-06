@@ -117,6 +117,7 @@ jobs:
             exit $lastExitCode
           }
           Remove-Item "${env:GITHUB_WORKSPACE}\RelWithDebInfo" -Include "*.obj" -Recurse
+          ccache --show-stats -vv
 
       - name: Validate C# native delegates
         run: python tools\ValidateNativeDelegateAttributes.py

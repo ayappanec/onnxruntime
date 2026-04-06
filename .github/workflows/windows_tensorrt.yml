@@ -146,6 +146,8 @@ jobs:
             exit $lastExitCode
           }
 
+          ccache --show-stats -vv
+
           # Clean up the output directory before uploading artifacts
           $outputDir = "${env:RUNNER_TEMP}\build\RelWithDebInfo"
           Write-Host "Cleaning up files from $outputDir..."

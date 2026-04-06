@@ -84,6 +84,10 @@ jobs:
             --use_binskim_compliant_compile_flags `
             --use_cache `
             --use_qnn ${env:qnn_kind}
+          if ($LASTEXITCODE -ne 0) {
+            exit $LASTEXITCODE
+          }
+          ccache --show-stats -vv
 
       - name: Run ONNX Tests
         shell: cmd

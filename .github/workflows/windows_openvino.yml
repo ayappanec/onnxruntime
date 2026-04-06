@@ -176,6 +176,10 @@ jobs:
             --use_binskim_compliant_compile_flags `
             --use_cache `
             --use_openvino CPU
+          if ($LASTEXITCODE -ne 0) {
+            exit $LASTEXITCODE
+          }
+          ccache --show-stats -vv
 
       - name: Run unit tests
         shell: pwsh
